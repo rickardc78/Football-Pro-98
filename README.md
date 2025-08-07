@@ -1,2 +1,2 @@
 # Football-Pro-98
-Recreation of fbpro 98
+Re-creation of fbpro 98
