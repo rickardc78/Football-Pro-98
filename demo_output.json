@@ -1,0 +1,406 @@
+{
+  "league": {
+    "name": "NFLPI95",
+    "trophy": "The Super Bowl",
+    "numSeasons": 1,
+    "inception": 1995
+  },
+  "conferences": [
+    {
+      "name": "American",
+      "id": 1
+    },
+    {
+      "name": "National",
+      "id": 2
+    }
+  ],
+  "divisions": [
+    {
+      "name": "Eastern",
+      "id": 1
+    },
+    {
+      "name": "Central",
+      "id": 2
+    },
+    {
+      "name": "Western",
+      "id": 3
+    },
+    {
+      "name": "Eastern",
+      "id": 4
+    },
+    {
+      "name": "Central",
+      "id": 5
+    },
+    {
+      "name": "Western",
+      "id": 6
+    }
+  ],
+  "teams": [
+    {
+      "name": "",
+      "mascot": "Team",
+      "abbreviation": "TM",
+      "stadium": "Stadium",
+      "coach": "Coach",
+      "record": {
+        "wins": 0,
+        "losses": 0,
+        "ties": 0
+      }
+    },
+    {
+      "name": "ÖàëñÒÑÐÏÎÍùôèü÷å",
+      "mascot": "Team",
+      "abbreviation": "TM",
+      "stadium": "Stadium",
+      "coach": "Coach",
+      "record": {
+        "wins": 0,
+        "losses": 0,
+        "ties": 0
+      }
+    },
+    {
+      "name": "",
+      "mascot": "Team",
+      "abbreviation": "TM",
+      "stadium": "Stadium",
+      "coach": "Coach",
+      "record": {
+        "wins": 0,
+        "losses": 0,
+        "ties": 0
+      }
+    },
+    {
+      "name": "",
+      "mascot": "Team",
+      "abbreviation": "TM",
+      "stadium": "Stadium",
+      "coach": "Coach",
+      "record": {
+        "wins": 0,
+        "losses": 0,
+        "ties": 0
+      }
+    },
+    {
+      "name": "",
+      "mascot": "Team",
+      "abbreviation": "TM",
+      "stadium": "Stadium",
+      "coach": "Coach",
+      "record": {
+        "wins": 0,
+        "losses": 0,
+        "ties": 0
+      }
+    },
+    {
+      "name": "",
+      "mascot": "Team",
+      "abbreviation": "TM",
+      "stadium": "Stadium",
+      "coach": "Coach",
+      "record": {
+        "wins": 0,
+        "losses": 0,
+        "ties": 0
+      }
+    },
+    {
+      "name": "",
+      "mascot": "Team",
+      "abbreviation": "TM",
+      "stadium": "Stadium",
+      "coach": "Coach",
+      "record": {
+        "wins": 0,
+        "losses": 0,
+        "ties": 0
+      }
+    },
+    {
+      "name": "",
+      "mascot": "Team",
+      "abbreviation": "TM",
+      "stadium": "Stadium",
+      "coach": "Coach",
+      "record": {
+        "wins": 0,
+        "losses": 0,
+        "ties": 0
+      }
+    },
+    {
+      "name": "",
+      "mascot": "Team",
+      "abbreviation": "TM",
+      "stadium": "Stadium",
+      "coach": "Coach",
+      "record": {
+        "wins": 0,
+        "losses": 0,
+        "ties": 0
+      }
+    },
+    {
+      "name": "",
+      "mascot": "Team",
+      "abbreviation": "TM",
+      "stadium": "Stadium",
+      "coach": "Coach",
+      "record": {
+        "wins": 0,
+        "losses": 0,
+        "ties": 0
+      }
+    },
+    {
+      "name": "",
+      "mascot": "Team",
+      "abbreviation": "TM",
+      "stadium": "Stadium",
+      "coach": "Coach",
+      "record": {
+        "wins": 0,
+        "losses": 0,
+        "ties": 0
+      }
+    },
+    {
+      "name": "",
+      "mascot": "Team",
+      "abbreviation": "TM",
+      "stadium": "Stadium",
+      "coach": "Coach",
+      "record": {
+        "wins": 0,
+        "losses": 0,
+        "ties": 0
+      }
+    },
+    {
+      "name": "",
+      "mascot": "Team",
+      "abbreviation": "TM",
+      "stadium": "Stadium",
+      "coach": "Coach",
+      "record": {
+        "wins": 0,
+        "losses": 0,
+        "ties": 0
+      }
+    },
+    {
+      "name": "",
+      "mascot": "Team",
+      "abbreviation": "TM",
+      "stadium": "Stadium",
+      "coach": "Coach",
+      "record": {
+        "wins": 0,
+        "losses": 0,
+        "ties": 0
+      }
+    },
+    {
+      "name": "",
+      "mascot": "Team",
+      "abbreviation": "TM",
+      "stadium": "Stadium",
+      "coach": "Coach",
+      "record": {
+        "wins": 0,
+        "losses": 0,
+        "ties": 0
+      }
+    },
+    {
+      "name": "",
+      "mascot": "Team",
+      "abbreviation": "TM",
+      "stadium": "Stadium",
+      "coach": "Coach",
+      "record": {
+        "wins": 0,
+        "losses": 0,
+        "ties": 0
+      }
+    },
+    {
+      "name": "",
+      "mascot": "Team",
+      "abbreviation": "TM",
+      "stadium": "Stadium",
+      "coach": "Coach",
+      "record": {
+        "wins": 0,
+        "losses": 0,
+        "ties": 0
+      }
+    },
+    {
+      "name": "",
+      "mascot": "Team",
+      "abbreviation": "TM",
+      "stadium": "Stadium",
+      "coach": "Coach",
+      "record": {
+        "wins": 0,
+        "losses": 0,
+        "ties": 0
+      }
+    },
+    {
+      "name": "",
+      "mascot": "Team",
+      "abbreviation": "TM",
+      "stadium": "Stadium",
+      "coach": "Coach",
+      "record": {
+        "wins": 0,
+        "losses": 0,
+        "ties": 0
+      }
+    },
+    {
+      "name": "",
+      "mascot": "Team",
+      "abbreviation": "TM",
+      "stadium": "Stadium",
+      "coach": "Coach",
+      "record": {
+        "wins": 0,
+        "losses": 0,
+        "ties": 0
+      }
+    },
+    {
+      "name": "",
+      "mascot": "Team",
+      "abbreviation": "TM",
+      "stadium": "Stadium",
+      "coach": "Coach",
+      "record": {
+        "wins": 0,
+        "losses": 0,
+        "ties": 0
+      }
+    },
+    {
+      "name": "",
+      "mascot": "Team",
+      "abbreviation": "TM",
+      "stadium": "Stadium",
+      "coach": "Coach",
+      "record": {
+        "wins": 0,
+        "losses": 0,
+        "ties": 0
+      }
+    },
+    {
+      "name": "",
+      "mascot": "Team",
+      "abbreviation": "TM",
+      "stadium": "Stadium",
+      "coach": "Coach",
+      "record": {
+        "wins": 0,
+        "losses": 0,
+        "ties": 0
+      }
+    },
+    {
+      "name": "ÐäñëÆÞõÉÅøÆÈûèýç",
+      "mascot": "Team",
+      "abbreviation": "TM",
+      "stadium": "Stadium",
+      "coach": "Coach",
+      "record": {
+        "wins": 0,
+        "losses": 0,
+        "ties": 0
+      }
+    },
+    {
+      "name": "",
+      "mascot": "Team",
+      "abbreviation": "TM",
+      "stadium": "Stadium",
+      "coach": "Coach",
+      "record": {
+        "wins": 0,
+        "losses": 0,
+        "ties": 0
+      }
+    },
+    {
+      "name": "",
+      "mascot": "Team",
+      "abbreviation": "TM",
+      "stadium": "Stadium",
+      "coach": "Coach",
+      "record": {
+        "wins": 0,
+        "losses": 0,
+        "ties": 0
+      }
+    },
+    {
+      "name": "",
+      "mascot": "Team",
+      "abbreviation": "TM",
+      "stadium": "Stadium",
+      "coach": "Coach",
+      "record": {
+        "wins": 0,
+        "losses": 0,
+        "ties": 0
+      }
+    },
+    {
+      "name": "",
+      "mascot": "Team",
+      "abbreviation": "TM",
+      "stadium": "Stadium",
+      "coach": "Coach",
+      "record": {
+        "wins": 0,
+        "losses": 0,
+        "ties": 0
+      }
+    },
+    {
+      "name": "ü÷ôõ(	",
+      "mascot": "Team",
+      "abbreviation": "TM",
+      "stadium": "Stadium",
+      "coach": "Coach",
+      "record": {
+        "wins": 0,
+        "losses": 0,
+        "ties": 0
+      }
+    },
+    {
+      "name": "",
+      "mascot": "Team",
+      "abbreviation": "TM",
+      "stadium": "Stadium",
+      "coach": "Coach",
+      "record": {
+        "wins": 0,
+        "losses": 0,
+        "ties": 0
+      }
+    }
+  ]
+}
