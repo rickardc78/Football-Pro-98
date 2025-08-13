@@ -1,0 +1,54 @@
+# Simple Makefile for LGE Parser
+# Build system for the simplified Football Pro '98 .lge file parser
+
+# Compiler settings
+CXX = g++
+CC = gcc
+CXXFLAGS = -Wall -g -std=c++98
+CFLAGS = -Wall -g
+
+# Target executable
+TARGET = simple_lge_parser
+
+# Source files
+SOURCES = simple_main.cpp simple_lge_parser.cpp
+
+# Object files
+OBJECTS = $(SOURCES:.cpp=.o)
+
+# Default target
+all: $(TARGET)
+
+# Build the main executable
+$(TARGET): $(OBJECTS)
+	@echo "Linking $(TARGET)..."
+	$(CXX) $(CXXFLAGS) -o $(TARGET) $(OBJECTS)
+
+# Compile C++ files
+%.o: %.cpp
+	@echo "Compiling $<..."
+	$(CXX) $(CXXFLAGS) -c $< -o $@
+
+# Test with existing .lge files
+test: $(TARGET)
+	@echo "Testing with NFLPI95.lge..."
+	./$(TARGET) NFLPI95.lge test_output.json --json
+	@echo "Testing with plain text output..."
+	./$(TARGET) NFLPI95.lge test_output.txt --text
+	@echo "Testing with NFLPI97.lge..."
+	./$(TARGET) NFLPI97.lge test_nfl97.json --json
+
+# Clean build artifacts
+clean:
+	@echo "Cleaning build artifacts..."
+	rm -f $(OBJECTS) $(TARGET) test_output.json test_output.txt test_nfl97.json
+
+# Show help
+help:
+	@echo "Available targets:"
+	@echo "  all      - Build the simple_lge_parser executable"
+	@echo "  test     - Build and test with sample files"
+	@echo "  clean    - Remove build artifacts"
+	@echo "  help     - Show this help message"
+
+.PHONY: all test clean help
