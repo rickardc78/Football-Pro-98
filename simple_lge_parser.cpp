@@ -163,20 +163,51 @@ long SimpleLgeParser::FindBlock(const char* blockId) {
 void SimpleLgeParser::ParseLeagueBlock(long offset, LeagueInfo *info) {
     if (offset < 0 || offset + 100 >= fileSize) return;
     
-    // Skip block header (4 bytes)
+    // Skip block header "L03:" (4 bytes)
     offset += 4;
     
-    // Read league data structure
-    // This is based on analyzing the binary structure
-    offset += 8; // Skip some header data
+    // Skip some binary header data (we need to find the strings)
+    // From analysis: NFLPI95 starts around offset+24 from block start
     
-    // League name appears to be around offset +24 from block start
-    strncpy(info->name, ReadString(offset + 20, sizeof(info->name)), sizeof(info->name) - 1);
-    info->name[sizeof(info->name) - 1] = 0;
+    // Look for readable strings after the header
+    long nameOffset = -1;
+    long trophyOffset = -1;
     
-    // Trophy name appears to be around offset +48
-    strncpy(info->trophy, ReadString(offset + 44, sizeof(info->trophy)), sizeof(info->trophy) - 1);
-    info->trophy[sizeof(info->trophy) - 1] = 0;
+    // Search for readable strings in the next 200 bytes
+    for (long i = offset; i < offset + 200 && i < fileSize - 10; i++) {
+        // Check if this could be the start of a readable string
+        if (data[i] >= 'A' && data[i] <= 'Z' && 
+            data[i+1] >= 'A' && data[i+1] <= 'Z' &&
+            nameOffset == -1) {
+            nameOffset = i;
+        }
+        // Look for "Bowl" pattern for trophy
+        if (data[i] == 'B' && data[i+1] == 'o' && data[i+2] == 'w' && data[i+3] == 'l' &&
+            trophyOffset == -1) {
+            // Find start of this string by going backwards
+            long start = i;
+            while (start > offset && data[start-1] != 0 && data[start-1] >= ' ') {
+                start--;
+            }
+            trophyOffset = start;
+        }
+    }
+    
+    // Extract league name
+    if (nameOffset >= 0) {
+        strncpy(info->name, ReadString(nameOffset, sizeof(info->name)), sizeof(info->name) - 1);
+        info->name[sizeof(info->name) - 1] = 0;
+    } else {
+        strcpy(info->name, "Unknown League");
+    }
+    
+    // Extract trophy name
+    if (trophyOffset >= 0) {
+        strncpy(info->trophy, ReadString(trophyOffset, sizeof(info->trophy)), sizeof(info->trophy) - 1);
+        info->trophy[sizeof(info->trophy) - 1] = 0;
+    } else {
+        strcpy(info->trophy, "Championship");
+    }
     
     // These are estimates based on typical league data
     info->numSeasons = 1;
@@ -187,13 +218,25 @@ void SimpleLgeParser::ParseLeagueBlock(long offset, LeagueInfo *info) {
 void SimpleLgeParser::ParseConferenceBlock(long offset, ConferenceInfo *info) {
     if (offset < 0 || offset + 50 >= fileSize) return;
     
-    // Skip block header
+    // Skip block header "C03:"
     offset += 4;
-    offset += 8; // Skip header data
     
-    // Conference name
-    strncpy(info->name, ReadString(offset + 8, sizeof(info->name)), sizeof(info->name) - 1);
-    info->name[sizeof(info->name) - 1] = 0;
+    // Look for readable conference name
+    long nameOffset = -1;
+    for (long i = offset; i < offset + 50 && i < fileSize - 10; i++) {
+        if (data[i] >= 'A' && data[i] <= 'Z' && 
+            data[i+1] >= 'a' && data[i+1] <= 'z') {
+            nameOffset = i;
+            break;
+        }
+    }
+    
+    if (nameOffset >= 0) {
+        strncpy(info->name, ReadString(nameOffset, sizeof(info->name)), sizeof(info->name) - 1);
+        info->name[sizeof(info->name) - 1] = 0;
+    } else {
+        sprintf(info->name, "Conference %d", numConferences + 1);
+    }
     
     // ID from the data
     info->id = data[offset + 4];
@@ -203,13 +246,25 @@ void SimpleLgeParser::ParseConferenceBlock(long offset, ConferenceInfo *info) {
 void SimpleLgeParser::ParseDivisionBlock(long offset, DivisionInfo *info) {
     if (offset < 0 || offset + 50 >= fileSize) return;
     
-    // Skip block header
+    // Skip block header "D03:"
     offset += 4;
-    offset += 8; // Skip header data
     
-    // Division name
-    strncpy(info->name, ReadString(offset + 8, sizeof(info->name)), sizeof(info->name) - 1);
-    info->name[sizeof(info->name) - 1] = 0;
+    // Look for readable division name
+    long nameOffset = -1;
+    for (long i = offset; i < offset + 50 && i < fileSize - 10; i++) {
+        if (data[i] >= 'A' && data[i] <= 'Z' && 
+            data[i+1] >= 'a' && data[i+1] <= 'z') {
+            nameOffset = i;
+            break;
+        }
+    }
+    
+    if (nameOffset >= 0) {
+        strncpy(info->name, ReadString(nameOffset, sizeof(info->name)), sizeof(info->name) - 1);
+        info->name[sizeof(info->name) - 1] = 0;
+    } else {
+        sprintf(info->name, "Division %d", numDivisions + 1);
+    }
     
     // ID from the data
     info->id = data[offset + 4];

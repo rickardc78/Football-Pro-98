@@ -1,0 +1,21 @@
+# Build artifacts
+*.o
+simple_lge_parser
+lge_parser
+
+# Output files from testing
+test_output.json
+test_output.txt
+test_nfl97.json
+test_debug.json
+output_final.json
+output.json
+
+# Editor files
+*~
+.*.swp
+.*.swo
+
+# OS files
+.DS_Store
+Thumbs.db

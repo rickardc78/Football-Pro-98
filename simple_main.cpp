@@ -16,6 +16,14 @@ int main(int argc, char *argv[]) {
         return 1;
     }
     
+    // Check for help first
+    for (int i = 1; i < argc; i++) {
+        if (strcmp(argv[i], "--help") == 0 || strcmp(argv[i], "-h") == 0) {
+            PrintUsageSimple();
+            return 0;
+        }
+    }
+    
     const char *inputFile = argv[1];
     const char *outputFile = NULL;
     int useJSON = 1; // Default to JSON format
@@ -26,9 +34,6 @@ int main(int argc, char *argv[]) {
             useJSON = 1;
         } else if (strcmp(argv[i], "--text") == 0) {
             useJSON = 0;
-        } else if (strcmp(argv[i], "--help") == 0 || strcmp(argv[i], "-h") == 0) {
-            PrintUsageSimple();
-            return 0;
         } else if (argv[i][0] != '-') {
             // Assume it's an output file
             outputFile = argv[i];
